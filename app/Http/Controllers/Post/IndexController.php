@@ -13,16 +13,17 @@ use App\Http\Controllers\Post\BaseController;
 
 class IndexController extends BaseController
 {
-
+    /*
     public function __invoke()
     {
 
         $posts = PostModel::paginate(10);
         return view('post.index', compact('posts'));
     }
-    /*
-    FILTERRRRRRRRRRRRRRRRRRRRRRRRR
-    /*
+    */
+    
+    /*FILTERRRRRRRRRRRRRRRRRRRRRRRRR*/
+    
     public function __invoke(FilterRequest $request)
     {
         $data = $request->validated();
@@ -32,7 +33,7 @@ class IndexController extends BaseController
         $posts = PostModel::filter($filter)->paginate(5);
         //return view('post.index', compact('posts'));
         //dd($posts);
-        */
+        
 
         
         /*
@@ -46,4 +47,4 @@ class IndexController extends BaseController
 
 }
 
-
+}
