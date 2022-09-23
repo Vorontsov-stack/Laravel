@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\Post\AdminController;
 
 
 /*
@@ -30,10 +31,19 @@ Route::group(['namespace' => 'App\Http\Controllers\Post'], function()
     Route::patch('/post/{post}', UpdateController::class)->name('update');
     Route::delete('/post/{post}', DestroyController::class)->name('destroy');
     Route::get('/', HomeController::class)->name('home.indexHome');
-    Route::get('/about', AboutController::class)->name('about.indexAbout');
+    
       
 
 });
+
+
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin'], function()
+{
+    Route::group(['namespace' => 'Post'], function()
+    {
+      Route::get('/post', AdminController::class)->name('admin.post.index');
+    });
+  });
 
 //Route::get('/', [PostController::class, 'indexHome'])->name('home.indexHome');
 

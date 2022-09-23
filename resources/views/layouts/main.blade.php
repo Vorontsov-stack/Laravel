@@ -36,7 +36,7 @@
                     <a class="nav-link" href="{{ route('create.indexCreate') }}">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about.indexAbout') }}">About</a>
+                    <a class="nav-link" href="{{ route('admin.post.index') }}">Admin</a>
                 </li>
                 
                 

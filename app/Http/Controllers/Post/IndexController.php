@@ -14,6 +14,7 @@ use App\Http\Controllers\Post\BaseController;
 class IndexController extends BaseController
 {
     
+    
     public function __invoke()
     {
 
@@ -27,14 +28,14 @@ class IndexController extends BaseController
     public function __invoke(FilterRequest $request)
     {
         $data = $request->validated();
-        dd($request);
+        //dd($request);
         $filter = app()->make(PostFilter::class,['queryParams' => array_filter($data)]);
         //dd($filter);
         $posts = PostModel::filter($filter)->paginate(5);
         //return view('post.index', compact('posts'));
-        //dd($posts);
-        
-
+        dd($posts);
+    }
+*/
         
         /*
         public function __invoke()
