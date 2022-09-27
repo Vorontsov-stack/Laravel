@@ -1,6 +1,7 @@
 <?php
 
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\Post\AdminController;
@@ -16,7 +17,9 @@ use App\Http\Controllers\Admin\Post\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['namespace' => 'App\Http\Controllers\Post'], function()
 {
@@ -89,3 +92,4 @@ Route::get('/about', [PostController::class, 'indexAbout'])->name('about.indexAb
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 */
+
