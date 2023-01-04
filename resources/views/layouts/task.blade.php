@@ -27,20 +27,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('index') }}">Home</a>
+                    <a class="nav-link" href="{{ route('HomeTask') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">Register</a>
+                    <a class="nav-link" href="{{ route('allTaskView') }}">Base</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('index.indexPost') }}">Base</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('create.createPost') }}">Create</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.post.index') }}">Admin</a>
-                </li>
+                  
+                
+                  
                 
                 
               

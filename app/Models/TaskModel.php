@@ -2,27 +2,27 @@
 
 namespace App\Models;
 
-use App\Models\Traits\Filterable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class PostModel extends Model
+class TaskModel extends Model
 {
     use HasFactory;
-    use Filterable;
     use SoftDeletes;
 
-    
-    protected $table = "post_news";
+    protected $table = "task_models";
 
-    /*
+
+     /*
     * protected $guarded - для того чтобы можно было создать, добавить 
     * объект в базу данных
     */
     protected $guarded = [];
+}
 
 
+/*
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id','id');
@@ -30,6 +30,6 @@ class PostModel extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id');
     }
-}
+*/
