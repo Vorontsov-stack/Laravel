@@ -30,7 +30,7 @@
                     <a class="nav-link" href="{{ route('index') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">Register</a>
+                    <a class="nav-link" href="{{ route('home') }}">Login</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('index.indexPost') }}">Base</a>
