@@ -26,7 +26,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('index') }}">Home</a>
                   </li>
                   <li class="nav-item">
@@ -35,12 +35,15 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('index.indexPost') }}">Base</a>
                   </li>
-                <li class="nav-item">
+                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('create.createPost') }}">Create</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.post.index') }}">Admin</a>
-                </li>
+                  </li>
+
+                @can('view', auth()->user())
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('admin.post.index') }}">Admin</a>
+                  </li>
+                @endcan  
                 
                 
               

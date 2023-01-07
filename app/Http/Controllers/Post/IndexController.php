@@ -17,6 +17,8 @@ class IndexController extends BaseController
     
     public function __invoke()
     {
+        //AdminPolicy
+        //$this->authorize('view', auth()->user());
 
         $posts = PostModel::paginate(10);
         return view('post.index', compact('posts'));
