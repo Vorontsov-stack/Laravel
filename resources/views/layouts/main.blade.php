@@ -39,11 +39,12 @@
                     <a class="nav-link" href="{{ route('create.createPost') }}">Create</a>
                   </li>
 
-                @can('view', auth()->user())
-                  <li class="nav-item">
+                  @can('view', auth()->user())
+                    <li class="nav-item">
                       <a class="nav-link" href="{{ route('admin.post.index') }}">Admin</a>
-                  </li>
-                @endcan  
+                    </li>
+                  @endcan
+                 
                 
                 
               

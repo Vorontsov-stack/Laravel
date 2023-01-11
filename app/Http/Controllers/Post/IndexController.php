@@ -15,6 +15,23 @@ class IndexController extends BaseController
 {
     
     
+    public function __invoke(FilterRequest $request)
+    {
+        //AdminPolicy
+        //$this->authorize('view', auth()->user());
+
+        $data = $request->validated();
+        
+        $filter = app()->make(PostFilter::class,['queryParams' => array_filter($data)]);
+        $posts = PostModel::filter($filter)->paginate(10);
+
+        return view('post.index', compact('posts'));
+        
+    }
+
+
+
+    /*
     public function __invoke()
     {
         //AdminPolicy
@@ -23,30 +40,9 @@ class IndexController extends BaseController
         $posts = PostModel::paginate(10);
         return view('post.index', compact('posts'));
     }
-    
+    */
     
 
-    /*FILTERRRRRRRRRRRRRRRRRRRRRRRRR*/
-    /*
-    public function __invoke(FilterRequest $request)
-    {
-        $data = $request->validated();
-        //dd($request);
-        $filter = app()->make(PostFilter::class,['queryParams' => array_filter($data)]);
-        //dd($filter);
-        $posts = PostModel::filter($filter)->paginate(5);
-        //return view('post.index', compact('posts'));
-        dd($posts);
-    }
-*/
-        
-        /*
-        public function __invoke()
-        {
-
-                $posts = PostModel::paginate(10);
-        return view('post.index', compact('posts'));
-        */
     
 
     }

@@ -25,11 +25,11 @@ class FilterRequest extends FormRequest
     {
         return 
         [
-            'title'=> 'required|string',
-            'post_content'=>'required|string',
-            'image'=>'required|string',
-            'category_id'=> '',
-            'tags'=> '',
+            'title' => '',
+            'post_content' => '',
+            'image' => '',
+            'category_id' => '',
+            'tags' => '',
             
         ];
     }
