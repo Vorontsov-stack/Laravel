@@ -8,8 +8,7 @@ use App\Models\PostModel;
 use App\Http\Filters\PostFilter;
 use App\Http\Requests\Post\FilterRequest;
 use App\Http\Controllers\Post\BaseController;
-
-
+use App\Http\Resources\post\postresource;
 
 class IndexController extends BaseController
 {
@@ -21,9 +20,14 @@ class IndexController extends BaseController
         //$this->authorize('view', auth()->user());
 
         $data = $request->validated();
+
+        $page = $data['page'] ?? 1;
+        $perPage = $data['per_page'] ?? 10;
         
         $filter = app()->make(PostFilter::class,['queryParams' => array_filter($data)]);
-        $posts = PostModel::filter($filter)->paginate(10);
+        $posts = PostModel::filter($filter)->paginate($perPage, ['*'], 'page', $page);
+
+        //return postresource::collection($posts);
 
         return view('post.index', compact('posts'));
         

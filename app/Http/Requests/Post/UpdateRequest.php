@@ -25,11 +25,11 @@ class UpdateRequest extends FormRequest
     {
         return 
         [
-            'title'=> 'required|string',
-            'post_content'=>'required|string',
-            'image'=>'required|string',
-            'category_id'=> '',
-            'tags'=> '',
+            'title' => 'string',
+            'post_content' => 'string',
+            'image' => 'string',
+            'category_id' => '',
+            'tags' => '',
         ];
     }
 }

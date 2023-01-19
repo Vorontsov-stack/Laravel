@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Post;
 
 use App\Models\PostModel;
 use App\Http\Requests\Post\UpdateRequest;
+use App\Http\Resources\post\postresource;
 use App\Http\Controllers\Post\BaseController;
 
 
@@ -16,9 +17,11 @@ class UpdateController extends BaseController
     {
         $data = $request -> validated();
 
-        $this -> service -> update($post, $data);
+        $post = $this -> service -> update($post, $data);
 
-        return redirect()->route('show', $post->id);
+        return new postresource($post);
+
+        //return redirect()->route('show', $post->id);
     }
 }
 

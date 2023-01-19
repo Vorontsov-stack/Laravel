@@ -64,8 +64,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Post'], function()
     
     
     Route::get('/post/{post}/edit', EditController::class)->name('edit.indexEdit');
-    Route::patch('/post/{post}', UpdateController::class)->name('update');
-    Route::delete('/post/{post}', DestroyController::class)->name('destroy');
+    Route::patch('/posts/{post}', UpdateController::class)->name('update');
+    Route::delete('/posts/{post}', DestroyController::class)->name('destroy');
     //Route::get('/login', HomeController::class)->name('register');
     
       

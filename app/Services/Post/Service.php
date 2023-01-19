@@ -17,6 +17,8 @@ class Service
 
         $post->tags()->attach($tags);
 
+        return $post;
+
        /* ТАК ДЕЛАТЬ НЕНАДО, НЕПРАВИЛЬНО
         foreach($tags as $tag){
             PostTag::firstOrCreate([
@@ -34,6 +36,7 @@ class Service
 
         $post->update($data);
         $post->tags()->sync($tags);
+        return $post->fresh();
     }
 
 
