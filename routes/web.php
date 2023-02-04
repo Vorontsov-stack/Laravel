@@ -12,8 +12,11 @@ use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\UpdateController;
 use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Admin\Post\AdminController;
-use App\Http\Controllers\Admin\Post\AdminCreateController;
+use App\Http\Controllers\Admin\Post\AdminBaseController;
 use App\Http\Controllers\Admin\Post\AdminHomeController;
+use App\Http\Controllers\Admin\Post\AdminStoreController;
+use App\Http\Controllers\Admin\Post\AdminCreateController;
+
 
 
 
@@ -58,7 +61,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Post'], function()
 {
     
     Route::get('/posts', IndexController::class)->name('index.indexPost');
-    Route::get('/posts/create', CreateController::class)->name('create.createPost');
+    Route::get('/posts/create', CreateController::class)->name('createPost');
     Route::post('/store', StoreController::class)->name('store');
     Route::get('/post/{post}', ShowController::class)->name('show');
     
@@ -77,9 +80,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
 {
     Route::group(['namespace' => 'Post'], function()
     {
-      Route::get('/post', AdminController::class)->name('admin.post.index');
+      Route::get('/', AdminController::class)->name('AdminIndex');
+      Route::get('/base', AdminBaseController::class)->name('baseAdmin');
       Route::get('/home', AdminHomeController::class)->name('admin.post.homeAdmin');
-      //Route::get('/create', AdminCreateController::class)->name('admin.post.createAdmin');
+      Route::get('/create', AdminCreateController::class)->name('createAdmin');
+      Route::post('/store', AdminStoreController::class)->name('AdmStore');
+      //Route::patch('/posts/{post}', UpdateController::class)->name('update');
     });
 });
 

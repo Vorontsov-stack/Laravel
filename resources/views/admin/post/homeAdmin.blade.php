@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('home')
+@section('content')
 
 
 
 <body>
     <div>
-        <p>HOME</p>
+        <p>HOMEhomeeeee</p>
     </div>
 </body>
 @endsection

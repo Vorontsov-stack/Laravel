@@ -1,19 +1,29 @@
 <nav class="mt-2">
-    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-      <!-- Add icons to the links using the .nav-icon class
-           with font-awesome or any other icon font library -->
-      
-      <li class="nav-header">ADMIN PANEL</li>
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+    
+    <li class="nav-header">ADMIN PANEL</li>
+    
       <li class="nav-item">
-        <a href="pages/calendar.html" class="nav-link">
-          <i class="nav-icon fa-solid fa-bars"></i>
-          <p>
-            Posts
-            <span class="badge badge-info right">{{ $posts->total() }}</span>
-          </p>
-        </a>
+        <a class="nav-link" href="{{ route('AdminIndex') }}">Home</a>
       </li>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('baseAdmin') }}">Base</a>
       
-     
-    </ul>
-  </nav>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('createAdmin') }}">Create</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Update</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('index') }}">Back</a>
+    </li>
+    
+    
+   
+  </ul>
+</nav>

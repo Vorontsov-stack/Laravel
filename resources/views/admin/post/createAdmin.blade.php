@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
 <div>
     
-    <form action="{{ route('store') }}" method="post">
+    <form action="{{ route('AdmStore') }}" method="post">
         @csrf
         <div class="form-group">
             <label for="title">Title</label>

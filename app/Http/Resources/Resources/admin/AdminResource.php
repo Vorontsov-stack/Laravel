@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\post;
+namespace App\Http\Resources\Resources\admin;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class postresource extends JsonResource
+class AdminResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,7 +14,7 @@ class postresource extends JsonResource
      */
     public function toArray($request)
     {
-        return 
+        return     
         [
             'id' => $this->id,
             'title' => $this->title,

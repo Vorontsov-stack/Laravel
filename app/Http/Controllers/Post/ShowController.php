@@ -13,7 +13,7 @@ class ShowController extends BaseController
 {
     public function __invoke(PostModel $post)
     {
-        return view('post.show', compact('post'));
+        return view('admin.post.show', compact('post'));
     }
 }
 
