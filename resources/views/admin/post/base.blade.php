@@ -6,7 +6,7 @@
         
     @foreach($posts as $post)
     <div>
-        <table class="table table-responsive table-striped">
+        <table class="table table-bordered table-responsive table-striped">
             <thead>
                 <tr>
                   <th scope="col">ID</th>
