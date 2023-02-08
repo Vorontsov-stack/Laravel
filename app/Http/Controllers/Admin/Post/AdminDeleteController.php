@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Admin\Post;
 
 
 use App\Models\PostModel;
@@ -9,7 +9,7 @@ use App\Http\Controllers\Post\BaseController;
 
 
 
-class DestroyController extends BaseController
+class AdminDeleteController extends BaseController
 {
     public function __invoke(PostModel $post)
     {
@@ -17,5 +17,3 @@ class DestroyController extends BaseController
         return redirect()->route('baseAdmin');
     }
 }
-
-

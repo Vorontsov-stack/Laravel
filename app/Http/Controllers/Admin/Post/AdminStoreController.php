@@ -19,10 +19,10 @@ class AdminStoreController extends BaseController
 
         $post = $this -> service -> store($data);
 
-        return new AdminResource($post);
+        //return new AdminResource($post);
 
         
 
-        //return redirect()->route('index.indexPost');
+        return redirect()->route('baseAdmin');
     }
 }

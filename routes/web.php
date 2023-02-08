@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Post\EditController;
 use App\Http\Controllers\Post\HomeController;
 use App\Http\Controllers\Post\ShowController;
@@ -13,9 +14,13 @@ use App\Http\Controllers\Post\UpdateController;
 use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Admin\Post\AdminController;
 use App\Http\Controllers\Admin\Post\AdminBaseController;
-use App\Http\Controllers\Admin\Post\AdminHomeController;
+use App\Http\Controllers\Admin\Post\AdminEditController;
+use App\Http\Controllers\Admin\Post\AdminShowController;
 use App\Http\Controllers\Admin\Post\AdminStoreController;
 use App\Http\Controllers\Admin\Post\AdminCreateController;
+use App\Http\Controllers\Admin\Post\AdminDeleteController;
+use App\Http\Controllers\Admin\Post\AdminUpdateController;
+use App\Http\Controllers\Admin\Post\AdminUpdBaseController;
 
 
 
@@ -55,43 +60,49 @@ Route::delete('/post/{post}', DestroyTaskController::class)->name('destroyTask')
 
 Auth::routes();
 
-Route::get('/', HomeController::class)->name('index');
+
+
+Route::get('/home', [LoginController::class, 'index'])->name('home');
 
 Route::group(['namespace' => 'App\Http\Controllers\Post'], function()
 {
-    
+    Route::get('/', HomeController::class)->name('index');
     Route::get('/posts', IndexController::class)->name('index.indexPost');
-    Route::get('/posts/create', CreateController::class)->name('createPost');
-    Route::post('/store', StoreController::class)->name('store');
-    Route::get('/post/{post}', ShowController::class)->name('show');
+    //Route::get('/posts/create', CreateController::class)->name('createPost');
+    //Route::post('/store', StoreController::class)->name('store');
+    //Route::get('/post/{post}', ShowController::class)->name('show');
     
     
-    Route::get('/post/{post}/edit', EditController::class)->name('edit.indexEdit');
-    Route::patch('/posts/{post}', UpdateController::class)->name('update');
-    Route::delete('/posts/{post}', DestroyController::class)->name('destroy');
+    //Route::get('/post/{post}/edit', EditController::class)->name('edit.indexEdit');
+    //Route::patch('/posts/{post}', UpdateController::class)->name('update');
+    //Route::delete('/posts/{post}', DestroyController::class)->name('destroy');
     //Route::get('/login', HomeController::class)->name('register');
     
-      
-
 });
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', 'middleware' => 'admin'], function()
 {
-    Route::group(['namespace' => 'Post'], function()
+  Route::group(['namespace' => 'Post'], function()
     {
       Route::get('/', AdminController::class)->name('AdminIndex');
-      Route::get('/base', AdminBaseController::class)->name('baseAdmin');
-      Route::get('/home', AdminHomeController::class)->name('admin.post.homeAdmin');
+      Route::get('/base', AdminBaseController::class)->name('base');
+      Route::get('/UpdBase', AdminUpdBaseController::class)->name('updateBase');
       Route::get('/create', AdminCreateController::class)->name('createAdmin');
       Route::post('/store', AdminStoreController::class)->name('AdmStore');
-      //Route::patch('/posts/{post}', UpdateController::class)->name('update');
+
+      Route::get('/post/{post}', AdminShowController::class)->name('show');
+      Route::get('/post/{post}/edit', AdminEditController::class)->name('edit');
+      Route::delete('/posts/{post}', AdminDeleteController::class)->name('destroy');
+      Route::patch('/posts/{post}', AdminUpdateController::class)->name('update');
+      
     });
 });
 
 
 
 
+    
 
 
 
@@ -139,6 +150,6 @@ Route::get('/about', [PostController::class, 'indexAbout'])->name('about.indexAb
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 */
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

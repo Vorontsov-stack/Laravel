@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Admin\Post;
 
 
 use App\Models\PostModel;
@@ -11,7 +11,7 @@ use App\Http\Controllers\Post\BaseController;
 
 
 
-class UpdateController extends BaseController
+class AdminUpdateController extends BaseController
 {
     public function __invoke(UpdateRequest $request, PostModel $post)
     {
@@ -24,5 +24,3 @@ class UpdateController extends BaseController
         return redirect()->route('show', $post->id);
     }
 }
-
-

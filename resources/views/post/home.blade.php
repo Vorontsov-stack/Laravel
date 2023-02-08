@@ -3,7 +3,7 @@
 <body>
     
         <div>
-            <p>HOMEEEEE</p>
+            <p>HOMEEEEEA</p>
         </div>
     
 </body>

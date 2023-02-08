@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\FilterRequest;
 use App\Http\Controllers\Post\BaseController;
 
-class AdminBaseController extends BaseController
+class AdminUpdBaseController extends BaseController
 {
     
     
@@ -28,20 +28,7 @@ class AdminBaseController extends BaseController
 
         //return postresource::collection($posts);
 
-        return view('admin.post.base', compact('posts'));
+        return view('admin.post.baseAdmin', compact('posts'));
         
     }
-
-
-
-    /*
-    public function __invoke()
-    {
-        //AdminPolicy
-        //$this->authorize('view', auth()->user());
-
-        $posts = PostModel::paginate(10);
-        return view('post.index', compact('posts'));
-    }
-    */
 }

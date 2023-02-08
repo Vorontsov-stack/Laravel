@@ -10,14 +10,14 @@
       </li>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('baseAdmin') }}">Base</a>
+      <a class="nav-link" href="{{ route('base') }}">Base</a>
       
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{ route('createAdmin') }}">Create</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Update</a>
+      <a class="nav-link" href="{{ route('updateBase') }}">Update</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{ route('index') }}">Back</a>
