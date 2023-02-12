@@ -14,6 +14,6 @@ class AdminDeleteController extends BaseController
     public function __invoke(PostModel $post)
     {
         $post->delete();
-        return redirect()->route('baseAdmin');
+        return redirect()->route('base');
     }
 }

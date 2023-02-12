@@ -35,7 +35,7 @@
     </div>
 
     <div>
-        <a href="{{ route('baseAdmin') }}">Back</a>
+        <a href="{{ route('updateBase') }}">Back</a>
     </div>    
     
     
