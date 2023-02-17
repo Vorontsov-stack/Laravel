@@ -19,14 +19,7 @@ class Service
 
         return $post;
 
-       /* ТАК ДЕЛАТЬ НЕНАДО, НЕПРАВИЛЬНО
-        foreach($tags as $tag){
-            PostTag::firstOrCreate([
-                'tag_id' => $tag,
-                'post_id' => $post->id,
-            
-            ]);
-        }*/
+       
     }
 
     public function update($post, $data)
