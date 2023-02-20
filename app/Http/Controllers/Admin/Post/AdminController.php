@@ -34,20 +34,3 @@ class AdminController extends BaseController
     */
 }
 
-    
-
-    /*
-
-
-class AdminController extends Controller
-{
-    public function __invoke()
-    {
-        $posts = PostModel::paginate(10);
-        return view('admin.post.index', compact('posts'));
-
-        
-    }
-}
-*/
-
